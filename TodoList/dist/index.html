@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="bgDiv"></div>
+    <div class="container">
+        <!-- <h1 id="indexTitle">Hey, we are really excited to have you with us! Click on the ‘new’ button to add your first task</h1> -->
+        
+        <button id="backButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </button>
+        <h1 id="indexTitle" class="mt-5 mb-5">&lt;todo-er/&gt;</h1>
+        <div id="newProject" class="card">
+            <div class="card-body">
+                <h5 id="newProjectTitle"class="card-title">New Project</h5>
+                <form id="addProjectForm" class="needs-validation" novalidate>
+                    <input type="hidden" id="addProjectFormProjectID" name="projectID" value="">
+                    <div class="form-group">
+                        <label for="name">Project Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        <div class="invalid-feedback">
+                            Please write a name for your project!
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" id="cancelNewProjectButton" class="btn btn-danger cardBtn">Cancel</button>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary cardBtn">Save</button>
+                        </div>    
+                    </div>
+                </form>
+            </div>
+        </div>
+   
+
+        <div id="projectViews" class="row">
+              <button type="button"
+                      class="btn btn-primary mr-4 createCardButton"
+                      id="createProjectButton">
+                      <img class="backgroundCardImg easter animateEaster hideMe" src="../media/card1.jpg">
+                <div class="circle">
+                    +
+                </div>
+              </button>
+        </div>
+
+
+        <div id="newTask" class="card">
+            <div class="card-body">
+                <h5 id="newTaskTitle" class="card-title">New Task</h5>
+                <form id="addTaskForm" class="needs-validation" novalidate>
+                    <input type="hidden" id="todoID" name="todoID" value="">
+                    <input type="hidden" id="addTaskFormProjectID" name="projectID" value="">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please write a title for your task!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="description" name="description" placeholder="Enter description">
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="Enter date">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter a due date for your task!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="checklist-item-0">Checklist</label>
+                        <div id="checklistDiv">
+                            
+                        </div> 
+                        <button id="addItemToChecklist" type="button" class="btn btn-success cardBtn mt-2">Add item</button>
+                    </div>
+                    <div class="form-group">
+                        <p>Priority</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="priority" id="low" value="low" checked="checked">
+                            <label class="form-check-label" for="low">Low</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="priority" id="medium" value="medium">
+                            <label class="form-check-label" for="medium">Medium</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="priority" id="high" value="high">
+                            <label class="form-check-label" for="high">High</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea type="text" class="form-control" id="notes" name="notes" placeholder="Enter notes"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" id="cancelNewTaskButton" class="btn btn-danger cardBtn">Cancel</button>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary cardBtn">Save</button>
+                        </div>    
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="taskViews" class="row">
+            <button type="button"
+                    class="btn btn-primary createCardButton mr-4"
+                    id="createTaskButton">
+                    <img class="backgroundCardImg easter hideMe" src="../media/card1.jpg">
+                <div class="circle">
+                    +
+                </div>
+            </button>
+        </div>
+    </div>
+    <!-- <script src="main.js"></script> -->
+    <script type="module" src="../src/index.js"></script>
+</body>
+
+</html>

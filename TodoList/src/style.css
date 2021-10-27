@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+#indexTitle {
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    user-select: none;
+}
+
+#backButton {
+    z-index: 2;
+    border: 1px solid #c6c6c6;
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    left: 2rem;
+    background: white;
+    border: none;
+    border-radius: 100%;
+    height: 64px;
+    width: 64px;
+    line-height: 0;
+    outline: none !important;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+#backButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.container {
+        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    color: black;
+}
+
+#bgDiv {
+    content: '';
+    background: url('../media/wp2450670.png') no-repeat center center/cover;
+    position: fixed;
+    opacity: 0.9;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+
+.form-group > p {
+    margin-bottom: 0.3rem;
+}
+
+.card {
+    width: 18rem;
+}
+
+.card-header {
+    height: 52px;
+}
+
+.card-header > .row {
+    padding-top: 2px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header > .row.end {
+    justify-content: end;
+}
+
+.card-body {
+    display: flex;
+    flex-flow: column;
+    /* justify-content: space-between; */
+}
+
+.cardHeaderBtn {
+    background: none;
+    border: none;
+    border-radius: 100%;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    line-height: 0;
+    outline: none !important;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.cardHeaderBtn.editBtn {
+    border-radius: 4px;
+    padding-right: 1px;
+}
+
+.cardHeaderBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.cardHeaderBtn > svg {
+    fill: white;
+    height: 24px;
+    width: 24px;
+}
+
+.completedBadge {
+    opacity: 1;
+    background: #585858;
+    border: 1px solid;
+    font-weight: 100;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.completedBadge:hover {
+    opacity: 0.3;
+}
+
+.unCompletedBadge {
+    opacity: 0.3;
+    background: #585858;
+    border: 1px solid;
+    font-weight: 100;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.unCompletedBadge:hover {
+    opacity: 1;
+}
+
+.cardBtn {
+    width: 100%;
+}
+
+.notes {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.created {
+    font-size: 0.7rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.hideMe {
+    display: none;
+}
+
+.backgroundCardImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0px;
+    z-index: 0;
+    opacity: 1;
+    object-fit: cover;
+    
+    
+}
+
+.animateEaster {
+    object-position: 0px -50px;
+    animation: MoveUpDown 3s linear infinite;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        object-position: 0px -50px;
+    }
+    50% {
+        object-position: 0px -124px;
+    }
+  }
+
+.createCardButton {
+    position: relative;
+    width: 18rem;
+    background: none;
+    outline: none !important;
+    box-shadow: none;
+    border: 2px solid white !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.createCardButton:hover {
+    background-color: #9bcbff6b !important;
+}
+
+.createCardButton:hover .circle {
+    color: white;
+    background-color: #3688ce !important;
+    border-color: white;
+}
+
+
+
+.circle {
+    color: white;
+    border: 2px solid white;
+    border-radius: 1000px;
+    padding-top: 17px;
+    padding-left: 1px;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    font-size: 4rem;
+    line-height: 0.2;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* form {
+    width: 200px;
+    padding: 10px;
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.439);
+    max-width: 600px;
+    
+    
+    // vertical-align: baseline; 
+} */
+
+.row {
+    margin: 0 !important;
+}
+
+#newProject {
+    display: none;
+}
+
+#projectViews {
+    justify-content: center;
+}
+
+.projectView {
+    height: 149.28px;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.projectView:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#createProjectButton {
+    height: 149.28px;
+}
+
+
+
+
+#newTask {
+    display: none;
+}
+
+#taskViews {
+    display: none;
+    justify-content: center;
+}
+
+.taskView {
+    /* height: 302.28px; */
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.taskView:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* .card.taskView > .card-body > .form-check:last-child {
+    margin-bottom: 1.5rem;
+} */
+
+#createTaskButton {
+    height: 302.28px;
+}
